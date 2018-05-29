@@ -2,6 +2,7 @@ package com.asignore.tos.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Data
 @EqualsAndHashCode
+@ToString(callSuper = true, exclude = {"sourceAirportEntity", "destinationAirportEntity"})
 public class FlightEntity {
 
     @Id

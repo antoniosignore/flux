@@ -2,6 +2,7 @@ package com.asignore.tos.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Data
 @EqualsAndHashCode
+@ToString(callSuper = true, exclude = "aircrafts")
 public class AirportEntity {
 
     @Id

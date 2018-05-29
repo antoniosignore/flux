@@ -37,7 +37,7 @@ public interface FluxApi {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved an operational plan", response = OperationsPlanDTO.class, responseContainer = "List")})
     // Swagger info section-------------------------------------------------
-    @RequestMapping(value = "//operationsplan",
+    @RequestMapping(value = "/operationsplan",
             produces = {"application/hal+json", "application/problem+json", "application/json"},
             method = RequestMethod.GET)
     Collection<OperationsPlanDTO> findByRegistration(@RequestParam(value = "registration", required = true) @NotNull String registration);

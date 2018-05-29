@@ -68,6 +68,9 @@ The feature set includes:
 
 The test makes some assumptions and has limitations:
     
+    - In junit tests the expected values are rather large strings with expected JSON. With a bit more time
+      I would have had the expected results in separate file. 
+   
     - As said the architecture is a traditional CRUD stacked layers design. It is not probably suitable for 
       the TOS nature of the real world application which should be designed with a different event driven 
       architecture. Most likely I would have investigated a CQRS design implemented by Axon framework.
