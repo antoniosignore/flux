@@ -61,13 +61,28 @@ The feature set includes:
 
     java -jar target/tos-0.0.1.jar
     (make sure port 8080 is available)
+    
+(If I had time I would have preferred packing in a docker image)
   
 ## Assumptions
 
 The test makes some assumptions and has limitations:
-
+    
+    - As said the architecture is a traditional CRUD stacked layers design. It is not probably suitable for 
+      the TOS nature of the real world application which should be designed with a different event driven 
+      architecture. Most likely I would have investigated a CQRS design implemented by Axon framework.
+    
+    - The business logic is basically embedded in the Service class and rely on JPA entities/relationships.
+      No caching mechanisms have been added yet to improve performance
+    
+    - Data are pushed in the DB by a DatabaseTesterHelper: time allowing this is obviously not a good
+      solution and rather a CRUD logic to manage the data should have been added. 
+      Not being data import important for the purpose of the demo I took a code insert pragmatic approach.
+    
     - Swagger definition should be cleaner and better execptions management mapped to proper http status
+    
     - Date management should be improved: no references to old Java Date class should presents. 
+    
     - I assumed the dates were in UTC time but the reports in TimeZOn format CET (with DST). However it is
       possible that London pilot may have wanted the response in London time zone. It was not specified clearly
       in the specs to I decided to stick for time constraints reason to CET formatting only
