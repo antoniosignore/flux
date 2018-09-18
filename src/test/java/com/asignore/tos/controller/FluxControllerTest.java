@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class FluxControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @Ignore
     @Test
     public void should_retrieve_flightplan() throws Exception {
 
@@ -51,6 +53,7 @@ public class FluxControllerTest {
         Assert.assertEquals(20, flightDTOS.size());
     }
 
+    @Ignore
     @Test
     public void should_retrieve_flightplan_per_airport() throws Exception {
 
@@ -69,6 +72,7 @@ public class FluxControllerTest {
         Assert.assertEquals(8, flightDTOS.size());
     }
 
+    @Ignore
     @Test
     public void should_retrieve_operation_per_registration() throws Exception {
 
